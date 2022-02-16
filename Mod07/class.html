@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Custom Class</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name, YearBirth) {
+          this.name = name;
+          this.YearBirth = YearBirth;
+        }
+        getAge() {
+          let date = new Date();
+          let CurrentAge = date.getFullYear() - this.YearBirth;
+          console.log("My Name: " + this.name);
+          console.log("My Current Age: " + CurrentAge);
+        }
+      }
+
+      let Bakri = new Person("Bakri", 1991);
+      let Pankaj = new Person("Pankaj", 1985);
+      Bakri.getAge();
+      Pankaj.getAge();
+    </script>
+  </body>
+</html>

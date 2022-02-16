@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Demo</title>
+  </head>
+  <body>
+    <h1>This is Heading</h1>
+    <h1>This is another Heading</h1>
+    <p id="para1">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur pariatur
+      nam maiores id aut sit, expedita modi omnis similique laborum quidem
+      voluptate excepturi maxime accusamus explicabo alias ipsa distinctio quam
+      exercitationem, facilis, iste reprehenderit. Architecto, officia
+      reiciendis voluptate neque animi fugiat, labore ab accusamus facere ad
+      odio maiores expedita odit, minus quis exercitationem sit iusto mollitia
+      obcaecati eligendi. Velit magnam consectetur, consequuntur numquam aperiam
+      dolorum rem animi exercitationem voluptatibus quis asperiores veritatis
+      vel molestias, voluptates repudiandae? Perspiciatis laboriosam dolorum
+      sint eius, tempora hic voluptatum distinctio cumque asperiores rerum enim
+      eum eos suscipit quae ad perferendis, sed at. Unde, facilis id.
+    </p>
+    <p>This is another Paragraph</p>
+    <button id="btn">Click Me</button>
+    <script>
+      changeColor = () => {
+        document.getElementById("para1").style.color = "red";
+      };
+      function changeFont() {
+        document.getElementById("para1").style.fontSize = "30px";
+      }
+
+      let x = document.getElementById("btn");
+
+      //   x.onclick = changeColor;
+
+      x.addEventListener("click", changeColor);
+      x.addEventListener("mouseover", changeFont);
+      x.removeEventListener("mouseover", changeFont);
+    </script>
+  </body>
+</html>

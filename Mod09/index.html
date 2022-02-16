@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage</title>
+  </head>
+  <body>
+    <h1>Storage of Browser</h1>
+    <ol>
+      <li>Local Storage</li>
+      <li>Session Storage</li>
+      <li>Indexed DB</li>
+      <li>Cookies</li>
+    </ol>
+
+    <script>
+      // // Local Storage
+
+      //   localStorage.setItem("fname", "pankaj");
+      //   window.localStorage.setItem('trainee','Bakri');
+      //   let koeing_trainees = localStorage.getItem("trainee");
+      //   console.log(koeing_trainees);
+      //   console.log(localStorage.getItem('fname'))
+      //   localStorage.setItem('fname','sachin');
+      //   localStorage.removeItem('fname');
+      //   localStorage.clear()
+
+      // // Session Storage
+
+      //     window.sessionStorage.setItem('lname','kapoor');
+      //     // sessionStorage.setItem('trainee','Bakri');
+
+      //     console.log(sessionStorage.getItem('lname'));
+      //     sessionStorage.removeItem('lname')
+      //     sessionStorage.clear();
+
+      document.cookie = "myName=PankajKapoor";
+      document.cookie =
+        "myFriendName1=BakriFromSudan; expires=" +
+        new Date(2022, 01, 16).toUTCString();
+
+      let user = {
+        name: "pankaj",
+        age: 35,
+        salary: 35000,
+      };
+      // localStorage.setItem("userData",user);
+      localStorage.setItem("userData", JSON.stringify(user));
+
+      // console.log(localStorage.getItem("userData"))
+      let StringData = localStorage.getItem( "userData")
+      console.log(JSON.parse(StringData))
+    </script>
+  </body>
+</html>

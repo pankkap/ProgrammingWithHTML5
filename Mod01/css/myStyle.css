@@ -1,0 +1,27 @@
+h2 {
+  text-align: center;
+  font-size: 40px;
+  background-color: orange;
+  color: darkblue;
+}
+
+h6 {
+  text-align: right;
+  font-size: 30px;
+  background-color: skyblue;
+  color: red;
+}
+
+p {
+  color: blue;
+}
+
+#p2
+{
+  color: red;
+}
+
+.green
+{
+  color: green;
+}

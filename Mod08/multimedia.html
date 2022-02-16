@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimedia Content</title>
+  </head>
+  <body>
+    <!-- <audio controls autoplay>
+        <source src="./downloads/Fairy1.mp311">
+        <source src="./downloads/Fairy2.mp31">
+        <source src="./downloads/Fairy3.mp3">
+    </audio> -->
+
+    <video
+      src="./downloads/Dance.mp4"
+      width="500px"
+      style="display: block; margin: auto"
+    ></video>
+    <div style="margin: 50px; text-align: center">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/SlYvG6lqyGI"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div style="width: 100%; height: 100vh; border: 2px solid red">
+      <iframe
+        src="https://www.beta-labs.in/"
+        width="100%"
+        height="100%"
+      ></iframe>
+    </div>
+    <script>
+      let x = document.querySelector("video");
+      x.src = "./downloads/Dance-1.mp4";
+      x.play();
+      x.pause();
+      console.log(x);
+    </script>
+  </body>
+</html>

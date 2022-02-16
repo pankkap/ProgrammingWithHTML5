@@ -1,0 +1,91 @@
+<html manifest="appcache.manifest"> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IndexedDB Demo</title>
+  </head>
+  <body>
+    <h1>IndexedDB Example</h1>
+
+    <script>
+      let roster = [
+        {
+          name: "sachin",
+          dob: "22/11/88",
+          email: "sachin@gmail.com",
+        },
+        {
+          name: "mainsh",
+          dob: "12/12/88",
+          email: "manish@gmail.com",
+        },
+        {
+          name: "mukesh",
+          dob: "11/11/85",
+          email: "mukesh@gmail.com",
+        },
+      ];
+      function createDB() {
+        var request = indexedDB.open("MyTestDB", 2);
+        console.log(request);
+
+        request.onsuccess = function (e) {
+          db = e.target.result;
+          console.log("Database Open Successfully");
+          //   insert_record(roster);
+        };
+
+        request.onerror = function (e) {
+          console.log("Database Open Error");
+        };
+        request.onupgradeneeded = function (e) {
+          db = e.target.result;
+
+          // Create Table
+          var store = db.createObjectStore("roster", { keyPath: "email" });
+
+          store.transaction.oncomplete = function (e) {
+            console.log("Roster store created successfully");
+          };
+        };
+      }
+      function deleteDB() {
+        var request = indexedDB.deleteDatabase("MyTestDB");
+
+        request.onsuccess = function () {
+          console.log("Database deleted  Successfully");
+        };
+      }
+      createDB();
+      // deleteDB();
+
+      function insert_record(records) {
+        if (db) {
+          const insert_transaction = db.transaction("roster", "readwrite");
+          
+          const store = insert_transaction.objectStore("roster");
+
+          insert_transaction.onerror = function (e) {
+            console.log("Problem with Transaction");
+          };
+
+          insert_transaction.oncomplete = function () {
+            console.log("All Transaction completed");
+          };
+          records.forEach((record) => {
+            var request = store.add(record);
+
+            request.onerror = function (e) {
+              console.log("Could not add", record);
+            };
+            request.onsuccess = function (e) {
+              console.log("Successfully added", record);
+            };
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .menu {
+        float: left;
+        width: 20%;
+        text-align: center;
+      }
+
+      .menu a {
+        background-color: orange;
+        padding: 8px;
+        margin-top: 7px;
+        display: block;
+        width: 100%;
+        color: black;
+      }
+
+      .main {
+        float: left;
+        width: 60%;
+        padding: 0 20px;
+      }
+
+      .right {
+        background-color: #e5e5e5;
+        float: left;
+        width: 20%;
+        padding: 15px;
+        margin-top: 7px;
+        text-align: center;
+      }
+      .image-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+      .image {
+        width: 200px;
+        height: 200px;
+        background-color: rebeccapurple;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      @media only screen and (max-width: 520px) {
+        /* For mobile phones: */
+        .menu,
+        .main,
+        .right {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body style="font-family: Verdana; color: black">
+    <div style="background-color: #0862b8; padding: 15px; text-align: center">
+      <h1>Hello World</h1>
+    </div>
+
+    <div style="overflow: auto">
+      <div class="menu">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+        <a href="#">Link 5</a>
+        <a href="#">Link 6</a>
+        <a href="#">Link 7</a>
+        <a href="#">Link 8</a>
+        <a href="#">Link 9</a>
+        <a href="#">Link 10</a>
+        <a href="#">Link 11</a>
+        <a href="#">Link 12</a>
+      </div>
+
+      <div class="main">
+        <h2>Lorum Ipsum</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat.
+        </p>
+        <div class="image-container">
+          <div class="image">Image</div>
+          <div class="image">Image</div>
+          <div class="image">Image</div>
+          <div class="image">Image</div>
+          <div class="image">Image</div>
+          <div class="image">Image</div>
+        </div>
+      </div>
+
+      <div class="right">
+        <h2>About</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Ullam sed consequatur
+          fugit suscipit quia eaque, doloribus delectus ipsum alias eius ad
+          quibusdam porro repudiandae modi magnam provident accusamus maxime ab,
+          aperiam quos eum eligendi. Ipsa, nobis dolor esse inventore explicabo
+          rerum repellat enim officia eligendi velit natus doloribus, modi
+          ipsam! explicabo rerum repellat enim officia eligendi velit natus
+          doloribus, modi ipsam!
+        </p>
+      </div>
+    </div>
+
+    <div
+      style="
+        background-color: #e5e5e5;
+        text-align: center;
+        padding: 10px;
+        margin-top: 7px;
+      "
+    >
+      © copyright koenig-solutions.com
+    </div>
+  </body>
+</html>

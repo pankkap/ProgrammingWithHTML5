@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h2>Local Storage Demo</h2>
+      <pre>
+        Name: <input type="text" id="box">
+        
+        <input type="submit" value="Add" id="btn">
+        </pre>
+      <script>
+        document.getElementById("btn").addEventListener("click", function (e) {
+          // e.preventDefault();
+
+          let x = document.getElementById("box").value;
+          //   console.log(x);
+          localStorage.setItem("boxValue", x);
+        });
+        console.log(localStorage.getItem("boxValue"));
+      </script>
+    </form>
+  </body>
+</html>

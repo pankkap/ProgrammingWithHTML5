@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mod 14</title>
+  </head>
+  <body>
+    <h1>sharedWorker Example</h1>
+    <pre>
+        First  Number: <input type="text" id="number1">
+        <p id="output">
+
+        </p>        
+        <a href="sharedWorker.html">Back</a>        
+    </pre>
+    <script>
+      let first = document.getElementById("number1");
+      let output = document.getElementById("output");
+
+      const myWorker = new SharedWorker("sharedWorker.js");
+
+      first.onchange = function () {
+        myWorker.port.postMessage([
+          parseInt(first.value),
+          parseInt(first.value),
+        ]);
+        console.log("Message posted to worker to start the work");
+      };
+      myWorker.port.onmessage = function (e) {
+        output.innerHTML = e.data;
+        console.log("Message Recieved from worker");
+      };
+    </script>
+  </body>
+</html>

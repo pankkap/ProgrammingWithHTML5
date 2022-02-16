@@ -1,0 +1,27 @@
+<!-- documentation -->
+<!-- https://developers.google.com/maps/documentation/javascript/overview -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find My Location</title>
+    <!-- Google API Script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaNTFuhPpovWDR245cf1pzSSWurTO1Jms&callback=initMap"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="location">
+        <h1 class="status">Status</h1>
+        <button class="btn">Find My Location</button>
+      </div>
+
+      <div id="map"></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Worker</title>
+  </head>
+  <body>
+    <button id="long-task">Long Task</button>
+    <button id="small-task">Small Task</button>
+    <p id="output"></p>
+
+    <script>
+      document.getElementById("long-task").onclick = function () {
+        console.log("Web worker started");
+        const myWorker = new Worker("webworker1.js");
+
+        // send msg to worker to start the task
+        myWorker.postMessage("start Work");
+
+        myWorker.onmessage = function (e) {
+          console.log(e);
+          console.log("Worker Finished the Task");
+          document.getElementById("output").innerText = e.data;
+        };
+      };
+      document.getElementById("small-task").onclick = function () {
+        alert("Hello this is Small Task");
+      };
+    </script>
+  </body>
+</html>

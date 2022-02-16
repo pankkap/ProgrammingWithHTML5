@@ -1,0 +1,14 @@
+CACHE MANIFEST
+	
+CACHE:
+index.html 
+verification.js
+site.css
+graphics/logo.jpg
+ 
+NETWORK:
+/login
+ 
+# alternatives paths
+FALLBACK:
+/ajax/account/  /noCode.htm
